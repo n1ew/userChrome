@@ -1,0 +1,82 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * Edit this file and copy it as userChrome.css into your
+ * profile-directory/chrome/
+ *
+ * This file can be used to customize the look of Mozilla's user interface
+ * You should consider using !important on rules which you want to
+ * override default settings.
+ */
+
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+
+/*
+ * Some possible accessibility enhancements:
+ */
+/*
+ * Make all the default font sizes 20 pt:
+ *
+ * * {
+ *   font-size: 20pt !important
+ * }
+ */
+/*
+ * Make menu items in particular 15 pt instead of the default size:
+ *
+ * menupopup > * {
+ *   font-size: 15pt !important
+ * }
+ */
+/*
+ * Give the Location (URL) Bar a fixed-width font
+ *
+ * #urlbar {
+ *    font-family: monospace !important;
+ * }
+ */
+
+/*
+ * For more examples see http://www.mozilla.org/unix/customizing.html
+ */
+
+
+/*
+ * Safari browser style looks
+ * Note: tabs has two types: pin and normal(not pin)
+ */
+
+/* Remove bookmarks toolbar icons */
+toolbarbutton.bookmark-item > .toolbarbutton-icon {
+	display: none !important;
+}
+
+.tabbrowser-tabs {
+ 	text-align: center;
+}
+
+/* Hide close-tab button, no matter what */
+.tabbrowser-tabs .tab-close-button:not([pinned]) {
+	display: none !important;
+}
+
+/* Show close-tab button when hovering over the tab */
+.tabbrowser-tabs *|tab:hover .tab-close-button:not([pinned]) {
+	display: block !important;
+}
+
+/* Remove tabs icons completely */
+.tabbrowser-tabs .tab-icon:not([pinned]), .tab-icon-image:not([pinned]) {
+	display: none !important;
+}
+
+/* Move close-tab button to left side */
+.tabbrowser-tabs .tab-label:not([pinned]) {
+	-moz-box-ordinal-group: 2 !important;
+}
