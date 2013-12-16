@@ -71,8 +71,8 @@ toolbarbutton.bookmark-item > .toolbarbutton-icon {
 	display: block !important;
 }
 
-/* Remove tabs icons completely */
-.tabbrowser-tabs .tab-icon:not([pinned]), .tab-icon-image:not([pinned]) {
+/* Remove tabs icons and throbber completely */
+.tabbrowser-tabs .tab-icon:not([pinned]), .tab-icon-image:not([pinned]), .tab-throbber:not([pinned]) {
 	display: none !important;
 }
 
